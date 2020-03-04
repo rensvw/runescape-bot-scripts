@@ -11,6 +11,7 @@
 1. Install vagrant from https://www.vagrantup.com/downloads.html
 2. Make sure you have visualbox installed, get it at https://www.virtualbox.org/wiki/Downloads
 3. Use the command "vagrant up" to create an ubuntu box.
-4. Run the OpenOSRS.Appimage to start OSRS.
-5. Open a terminal and cd to your desktop folder.
-6. Use the commands "npm run alch" and "npm run nmz" to start the scripts.
+4. Default password is "vagrant".
+5. Run the OpenOSRS.Appimage to start OSRS.
+6. Open a terminal and cd to your desktop folder.
+7. Use the commands "npm run alch" and "npm run nmz" to start the scripts.

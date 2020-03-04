@@ -21,14 +21,10 @@ Vagrant.configure("2") do |config|
   config.vm.provision "file", source: "package.json", destination: "/home/vagrant/Desktop/package.json"
 
   config.vm.provision "shell", inline: <<-SHELL
-    apt-get update
-    apt-get install -y g++
-    apt-get install -y nodejs
-    apt-get install -y npm
-    su vagrant
+    sudo snap install node --classic --channel=13
     cd /home/vagrant/Desktop
-    npm install
-    wget https://github.com/open-osrs/launcher/releases/download/2.1.9.1/OpenOSRS.AppImage
+    sudo npm install
+    wget -q https://github.com/open-osrs/launcher/releases/download/2.1.9.1/OpenOSRS.AppImage
     chmod +x OpenOSRS.AppImage
   SHELL
 
