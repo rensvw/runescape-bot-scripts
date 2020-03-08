@@ -12,14 +12,14 @@ ioHook.start();
 // GLOBAL START VARIABLES
 let pause = false;
 let run = true;
-
+let x = "tussen de 3 min en 3.51 min "
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 /// IMPORTANT GLOBAL VARIABLES
 /// FIRST XX SPOTS NEED TO BE FILLED WITH OVERLOADS
 /// REST WITH ABSORPTION POTIONS AND THE LAST INVENTORY SPOT WITH THE DWARVEN ROCK CAKE
 
 // HOW MANY OVERLOADS IN THE FIRST X INVENTORY SLOTS?
-const NUMBER_OF_OVERLOADS = 13;
+const NUMBER_OF_OVERLOADS = 11;
 
 // DELAY BETWEEN CLICKS FOR PRAYER RESET
 const MIN_PRAYER_TIME = 33456;
@@ -30,8 +30,8 @@ const MIN_OVERLOAD_TIME = 304675;
 const MAX_OVERLOAD_TIME = 306654;
 
 // DELAY BETWEEN CLICKS FOR ABSORPTION POTION 
-const MIN_ABSORPTION_TIME = 340123;
-const MAX_ABSORPTION_TIME = 365345;
+const MIN_ABSORPTION_TIME = 203000;
+const MAX_ABSORPTION_TIME = 242021;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -114,8 +114,12 @@ async function clickPrayer(){
 async function clickAbsorption(){
     await delay(1500)
     console.log("--- STARTED ABSORPTION LOOP ---\n")
+    for(let i=0; i<4; i++){
+        moveAndClick(inventory[NUMBER_OF_OVERLOADS].x,inventory[NUMBER_OF_OVERLOADS].y)
+        await delay(1000);
+    }
     let clickTimer = 0;
-    let position = NUMBER_OF_OVERLOADS;
+    let position = NUMBER_OF_OVERLOADS + 1;
     let max = 27;
     while(run){
         moveAndClick(inventory[position].x,inventory[position].y)
@@ -145,11 +149,11 @@ async function clickOverload(){
     console.log("--- STARTED OVERLOAD LOOP --- \n")
     let clickTimer = 0;
     let position = 0;
-    let max = 12;
+    let max = NUMBER_OF_OVERLOADS;
     while(run){
         moveAndClick(inventory[position].x,inventory[position].y)
         clickTimer++;
-        console.log("    CLICKED ABSORPTION POT")
+        console.log("    CLICKED OVERLOAD POT")
         if(clickTimer == 4){
             position++;
             clickTimer=0;
