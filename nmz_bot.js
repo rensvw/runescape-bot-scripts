@@ -31,7 +31,7 @@ const MAX_OVERLOAD_TIME = 306654;
 
 // DELAY BETWEEN CLICKS FOR ABSORPTION POTION 
 const MIN_ABSORPTION_TIME = 203000;
-const MAX_ABSORPTION_TIME = 242021;
+const MAX_ABSORPTION_TIME = 232021;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
