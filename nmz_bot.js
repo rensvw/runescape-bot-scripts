@@ -114,6 +114,7 @@ async function clickOverload() {
 }
 
 async function runCode() {
+    await loadInventory();
     clickPrayer();
 }
 
